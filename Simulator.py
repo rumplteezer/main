@@ -2,36 +2,36 @@
 
 import serial as ser
 import math
-#import numpy as np
-#import matplotlib.pyplot as plt
-#import matplotlib.animation as animation
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.animation as animation
 
 #     Data input from Arduino
 
-PUP = 1100     #  Pulse Rod Position
-SAP = 1100     #  Safety Rod Position
-SHP = 1100         # Shim Rod Position
-REP = 1100     # Reg Rod Position
-#AIR = TRUE #  Air Applied to Pulse Rod
+PUP = 1100                #  Pulse Rod Position
+SAP = 1100                #  Safety Rod Position
+SHP = 1100                # Shim Rod Position
+REP = 1100                # Reg Rod Position
+#AIR = TRUE               #  Air Applied to Pulse Rod
 #     Variables for computation
 
-PUR = 0.00     #  Pulse Rod Reactivity
-SAR = 0.00     #  Safety Rod Reactivity
-SHR = 0.00     #  Shim Rod Reactivity
-RER = 0.00     #  Reg Rod Reactivity
-RHO = 0.00     #  Total Reactivity
+PUR = 0.00                #  Pulse Rod Reactivity
+SAR = 0.00                #  Safety Rod Reactivity
+SHR = 0.00                #  Shim Rod Reactivity
+RER = 0.00                #  Reg Rod Reactivity
+RHO = 0.00                #  Total Reactivity
 
-t = 0.00     #  Elapsed Time (s)..  t1-t0 from system date-time
-temp = 300  #degrees K
+t = 0.00                  #  Elapsed Time (s)..  t1-t0 from system date-time
+temp = 300                #degrees K
 Cp = (0.0075*temp)+17.58  #W/mK
-rad = 0.1 #m
-Beta = 0.0081 # Delayed neutron fraction
-l = 0.000045 # seconds = prompt neutron lifetime
+rad = 0.1                 #m
+Beta = 0.0075             # Delayed neutron fraction
+l = 0.000045              # seconds = prompt neutron lifetime
 NU = 2.07
 TU = 0.0973845
-B2 = 0.0119 #  TRIGA MKII core
-L2 = 2.5 # KSU core
-T = 10.00    #  Reactor Period
+B2 = 0.0119               #  TRIGA MKII core
+L2 = 2.5                  # KSU core
+T = 10.00                 #  Reactor Period
 keff = ((NU*TU)*math.exp(-B2*T))/(1+(L2*B2))
 rho = ((keff)-1)/(keff)
 
